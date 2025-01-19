@@ -11,6 +11,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customerId;
+
     private String name;
     private String mobile;
     private String email;
@@ -19,6 +20,7 @@ public class Customer {
 
     @CreationTimestamp
     private Timestamp createdDate;
+
     private Double dueAmount = 0.0;
     private Double totalAmount = 0.0;
     private Boolean isActive = true;
@@ -38,10 +40,6 @@ public class Customer {
 
     public Long getCustomerId() {
         return customerId;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
     }
 
     public String getName() {
@@ -86,10 +84,6 @@ public class Customer {
 
     public Timestamp getCreatedDate() {
         return createdDate;
-    }
-
-    public void setCreatedDate(Timestamp createdDate) {
-        this.createdDate = createdDate;
     }
 
     public Double getDueAmount() {

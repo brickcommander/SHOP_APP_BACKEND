@@ -1,9 +1,6 @@
 package com.brickcommander.crud.app.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
@@ -14,6 +11,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long itemId;
+
     private String name;
     private Double buyingPrice;
     private int buyingQ; // Id of unit from UnitsManager
@@ -24,6 +22,7 @@ public class Item {
 
     @CreationTimestamp
     private Timestamp createdDate;
+
     private Boolean isActive = true;
 
     public Item() {}
@@ -41,10 +40,6 @@ public class Item {
 
     public Long getItemId() {
         return itemId;
-    }
-
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
     }
 
     public String getName() {
@@ -105,10 +100,6 @@ public class Item {
 
     public Timestamp getCreatedDate() {
         return createdDate;
-    }
-
-    public void setCreatedDate(Timestamp createdDate) {
-        this.createdDate = createdDate;
     }
 
     public Boolean getActive() {
